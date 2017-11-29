@@ -8,22 +8,22 @@ int main(void)
 	int value, sum;
 	int *darray;
 	
-	printf("Á¤¼öÀÇ °³¼ö: ");
+	printf("ì •ìˆ˜ì˜ ê°œìˆ˜: ");
 	scanf("%d", &count);
 
 	
 	// Allocate dynamic memory here.
-	darray=(int*)malloc(sizeof(int));
+	darray=(int*)malloc(count*sizeof(int));
 
 	if( darray == NULL )
 	{
-		printf("µ¿Àû ¸Ş¸ğ¸® ÇÒ´ç ¿À·ù");
+		printf("ë™ì  ë©”ëª¨ë¦¬ í• ë‹¹ ì˜¤ë¥˜");
 		exit(1);
 	}
 	
 	for(i=0;i<count;i++)
 	{
-		printf("¾çÀÇ Á¤¼ö¸¦ ÀÔ·ÂÇÏ½Ã¿À: ");
+		printf("ì–‘ì˜ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì‹œì˜¤: ");
 		scanf("%d", &darray[i]);
 	}
 	
@@ -34,7 +34,9 @@ int main(void)
 		sum += darray[i];
 	}
 	
-	printf("ÇÕÀº %dÀÔ´Ï´Ù.\n", sum);
+	printf("í•©ì€ %dì…ë‹ˆë‹¤.\n", sum);
+	
+	free(darray);
 	
 	return 0;
 }
